@@ -1,0 +1,5 @@
+#one{
+    height: 300px;
+    display: grid;
+    grid: "a" 100px "b" 1fr;
+} 
