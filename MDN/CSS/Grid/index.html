@@ -23,26 +23,119 @@
             <h1> Syntax </h1>
             <ul>
                 <li class="part">
-                    /* <'grid-template'> values */
-                        <ol>
-                            <li class="example">
-                                <pre><code class="language-css">grid: "a" 100px "b" 1fr;</code></pre>
-                                <div class="syntax__example"  id="one">
-                                    <div class="aqua">"a" Area</div>
-                                    <div class="burlywood">"b" Area</div>
-                                </div>
-                                <p class="topic">We made two rows that defined the areas with their sizes by defining the string.</p>
-                            </li>
+                    <h3>
+                        /* <'grid-template'> values */
+                    </h3>
+                    <ol>
+                        <li class="example">
+                            <pre><code class="language-css">grid: "a" 100px "b" 1fr;</code></pre>
+                            <div class="syntax__example" id="one">
+                                <div class="aqua">"a" Area</div>
+                                <div class="burlywood">"b" Area</div>
+                            </div>
+                            <p class="topic">
+                                We made two rows that defined the areas with their sizes by defining
+                                the string.
+                            </p>
+                            <p class="topic">
+                                1fr means: Fr is a fractional and a new flexible unit. 1fr is for 1 part of the
+                                available space.
+                            </p>
+                        </li>
 
-                            <li class="example">
-                                <pre><code class="language-css">grid: [linename1] "a" 100px [linename2];</code></pre>
-                                <div class="syntax__example">
-                                    <div class="aqua">"a" Area</div>
-                                    <div class="burlywood">"b" Area</div>
-                                </div>
-                                <p class="topic">We made two rows that defined the areas with their sizes by defining the string.</p>
-                            </li>
-                        </ol>
+                        <li class="example">
+                            <pre><code class="language-css">grid: [linename1] "a" 100px [linename2];</code></pre>
+                            <div class="syntax__example" id="two">
+                                <div class="aqua">?</div>
+                                <div class="burlywood">?</div>
+                            </div>
+                            <p class="topic">I don't know yet (●'◡'●).</p>
+                        </li>
+
+                        <li class="example">
+                            <pre><code class="language-css">grid: "a" 200px "b" min-content;</code></pre>
+                            <div class="syntax__example" id="three">
+                                <div class="darkgoldenrod">"a" Area</div>
+                                <div class="yellow">"b" Area</div>
+                            </div>
+                            <p class="topic">I don't know what happens when min-content is set to grid cell.</p>
+                        </li>
+
+                        <li class="example">
+                            <pre><code class="language-css">grid: "a" minmax(100px, max-content) "b" 20%;</code></pre>
+                            <div class="syntax__example" id="four">
+                                <div class="yellowgreen">"a" Area</div>
+                                <div class="steelblue">"b" Area</div>
+                            </div>
+                            <p class="topic">The minmax() CSS function defines a size range greater than or equal to
+                                min and less than or equal to max. It is used with CSS Grids.</p>
+                        </li>
+
+                        <li class="example">
+                            <pre><code class="language-css">grid: 100px / 200px;</code></pre>
+                            <div class="syntax__example" id="five">
+                                <div class="burlywood"></div>
+                                <div class="yellow"></div>
+                            </div>
+                            <p class="topic">When we use a slash between grid values, it means to set the row and
+                                height.</p>
+                            <p class="topic">grid rows / grid columns.</p>
+                            <p class="topic">In this example, only the first row is
+                                set to 100px.</p>
+                        </li>
+
+                        <li class="example">
+                            <pre><code class="language-css">grid: minmax(400px, min-content) / repeat(auto-fill, 50px);</code></pre>
+                            <div class="syntax__example" id="six">
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow"></div>
+                                <div class="steelblue"></div>
+                                <div class="yellow  "></div>
+                            </div>
+                            <p class="topic">In the example above, the repeat() function lets us specify how many
+                                columns we want (auto-fill), and what size they should all be (50px). <ins
+                                    cite="https://www.sitepoint.com/css-grid-repeat-function">(From
+                                    sitepoint.com)</ins></p>
+                            <p class="topic">auto-fill allow for varying numbers of tracks depending on the
+                                available space. This makes them very handy for responsive layouts without media
+                                queries. <ins cite="https://www.sitepoint.com/css-grid-repeat-function">(From
+                                    sitepoint.com)</ins></p>
+                            <p class="topic"> If the
+                                min value in minmax(min, max) is larger than the max, then the max will be ignored.
+                                The minmax(min, max) will be treated as a min value.</p>
+                            <p class="topic"> in this example when the
+                                screen width is low, we'll see that only the first row obeys minmax(). if we want
+                                minmax() size to apply to total rows, we need to insert minmax function in repeat().
+                                For Example: repeat(auto-fill, minmax(200px, 1fr)). <ins
+                                    cite="https://ishadeed.com/article/css-grid-minmax/">(From ishadeed.com)</ins>
+                            </p>
+                        </li>
+                    </ol>
+                </li>
+
+                <li class="part">
+                    <h3>
+                        /* <'grid-template-rows'> / <br><br>
+                        &nbsp;&nbsp;&nbsp;[ auto-flow && dense? ] <'grid-auto-columns'>? values */
+                    </h3>
                 </li>
             </ul>
         </section>

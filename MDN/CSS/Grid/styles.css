@@ -3,3 +3,51 @@
     display: grid;
     grid: "a" 100px "b" 1fr;
 } 
+
+#one .aqua {
+    grid-area: "a";
+}
+
+#one .burlywood {
+    grid-area: "a";
+}
+
+#three{
+    height: 235px;
+    display: grid;
+    grid: "a" 200px "b" min-content;
+} 
+
+#three .aqua {
+    grid-area: "a";
+}
+
+#three .burlywood {
+    grid-area: "a";
+}
+
+#four{
+    height: 180px;
+    display: grid;
+    grid: "a" minmax(100px, max-content) "b" 20%;
+} 
+
+#four .aqua {
+    grid-area: "a";
+}
+
+#four .steelblue {
+    grid-area: "a";
+}
+
+#five{
+    height: 180px;
+    display: grid;
+    grid: 100px / 200px;;
+} 
+
+#six{
+    height: 450px;
+    display: grid;
+    grid: minmax(400px, min-content) / repeat(auto-fill, 50px);
+} 

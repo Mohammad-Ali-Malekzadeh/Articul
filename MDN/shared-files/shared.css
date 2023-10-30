@@ -60,15 +60,22 @@ main {
 
 .topic {
     font-family: cursive;
+    position: relative;
 }
 
 .topic::before {
-    display: inline-block;
-    content:'';
+    display: block;
+    content: '';
     background: url(./topic-icon.png) center/cover;
     margin-right: 0.2rem;
+    position: absolute;
     width: 1rem;
     height: 1rem;
+    left: -1.25rem;
+}
+
+ins {
+    font-size: 9pt;
 }
 
 /* Color DIV's */
@@ -78,4 +85,20 @@ main {
 
 .burlywood {
     background-color: burlywood;
+}
+
+.darkgoldenrod {
+    background-color: darkgoldenrod;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.yellowgreen {
+    background-color: yellowgreen;
+}
+
+.steelblue {
+    background-color: steelblue;
 }
