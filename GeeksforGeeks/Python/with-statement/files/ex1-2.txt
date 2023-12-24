@@ -1,0 +1,2 @@
+hello world
+was used try and finally statements instead of with statement
